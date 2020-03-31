@@ -7,7 +7,7 @@ const Services = (props) => {
     const arr = props.titleServiceButton;
 
     const arrReactElem = arr.map((elem) => {
-        return(<div className={`digit-${elem} service-digit`}>{elem}</div>);
+        return(<div key={elem} className={`digit-${elem} service-digit`}>{elem}</div>);
     });
 
     return(

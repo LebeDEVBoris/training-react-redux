@@ -20,7 +20,7 @@ const ToolBar = () => {
                 <ZeroAndDot zeroAndDot={[0, '.']} />
             </div>
             <div className="toolbar__mathactions">
-                <MathActions acts={['÷', 'X', '-', '+', '=']}/>
+                <MathActions acts={['÷', 'X', '-', '+']}/>
             </div>
         </div>
     );

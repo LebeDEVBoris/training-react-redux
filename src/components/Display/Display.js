@@ -1,18 +1,29 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import './Display.sass';
 
-const Display = () => {
+const Display = (props) => {
     return(
         <div className="display">
             <div className="display__inputeddata">
-                17*5=
+                {props.inputeddata}
             </div>
             <div className="display__result">
-                85
+                {props.result}
             </div>
         </div>
     );
 }
 
-export default Display;
+const mapStateToProps = ({inputeddata, result}) => {
+    return {
+        inputeddata, result
+    };
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Display);

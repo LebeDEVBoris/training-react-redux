@@ -4,11 +4,16 @@ import React from 'react';
 import Display from './../Display/Display';
 import ToolBar from './../ToolBar/ToolBar';
 
+
+// Temp
+import {showState} from './../../actions/actions'
+import {connect} from 'react-redux';
+
 // Common styles and reset
 import './../../reset.css';
 import './../../common.sass';
 
-const App = () => {
+const App = (props) => {
     return(
         <div className="app">
             <Display />
