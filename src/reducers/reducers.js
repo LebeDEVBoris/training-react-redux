@@ -3,7 +3,7 @@ const initialState = {
     mathAction: null,
     firstArg: null,
     secondArg: null,
-    result: ''   
+    result: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -11,18 +11,29 @@ const reducer = (state = initialState, action) => {
     switch(action.type) {
         
         case 'INPUTED_DIGIT':
-            
+           
+            let data; 
+            if (state.result === '') {
+                data = state.inputeddata + action.payload;
+            }
+            if (state.result !== '') {
+                data = '' + action.payload;
+            }
+
             return {
-                inputeddata: state.inputeddata + action.payload,
+                inputeddata: data,
                 mathAction: state.mathAction,
-                firstArg: null,
-                secondArg: null,
+                firstArg: state.firstArg,
+                secondArg: state.secondArg,
                 result: ''
             };
 
         case 'INPUTED_MATH_ACTION':
             const firstArgument = state.inputeddata;
             
+            if ((state.inputeddata === '') || (state.result !== '')) {
+                return state;
+            }
             return {
                 inputeddata: state.inputeddata + ` ${action.payload} `,
                 firstArg: firstArgument,
@@ -79,6 +90,9 @@ const reducer = (state = initialState, action) => {
                 mathAction: null,
                 result: willShowed
             }
+
+        case 'INPUTED_CLEAR_ALL':
+            return initialState;
 
         default: 
             return state;

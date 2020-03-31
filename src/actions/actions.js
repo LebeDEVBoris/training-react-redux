@@ -26,10 +26,24 @@ const showState = () => {
     }
 }
 
+const clearAll = () => {
+    return {
+        type: 'INPUTED_CLEAR_ALL'
+    }
+}
+
+const setMinisValue = () => {
+    return {
+        type: 'INPUTED_SET_MINUS_VALUE'
+    }
+}
+
 export {
     inputedDigit,
     inputedMathAction,
     showResult,
-    showState
+    showState,
+    clearAll,
+    setMinisValue
 };
 

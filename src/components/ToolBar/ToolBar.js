@@ -11,7 +11,7 @@ const ToolBar = () => {
     return(
         <div className="toolbar">
             <div className="toolbar__servicedigits">
-                <Services titleServiceButton={['AC', '±', '%']}/> 
+                <Services /> 
             </div>
             <div className="toolbar__commondigits">
                 <Digits digits={[1,2,3,4,5,6,7,8,9]}/>
